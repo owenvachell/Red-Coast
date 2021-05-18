@@ -4,17 +4,19 @@
 
 /*---- FONTS ----*/
 
-:root {
-    --default-font: Avenir, "Avenir Next", "Avenir Next Cyr", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+:root {    
+    --default-font: charter, Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
 body {
     --editor-font-size: 14px;
 }
 
+/*
 .cm-s-obsidian, .markdown-preview-view {
   text-align: justify;
 }
+*/
 
 .markdown-preview-view h1 {
     font-size: 175%;
@@ -47,6 +49,10 @@ body {
     overflow: auto;
 }
 
+.internal-query-header {
+    display: none!important;
+}
+
 /* ------- EMPTY Home Screen -----*/
 .empty-state {
     display: none;
@@ -58,15 +64,15 @@ Credit: Piotr, Obsidian forum
 --------------------- */
 
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-header,
-/*div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-strong,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-strong,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-em,
-div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-code-block,
+/*div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-code-block,*/
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-highlight,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-code,
-div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-string.cm-url,
+/*div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-string.cm-url,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-link,
-div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hmd-barelink,
-div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-comment,*/
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hmd-barelink,*/
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-comment,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-tag {
     display: none;
 }
@@ -246,27 +252,27 @@ ul ul::before {
 .theme-light {
     --background-inline-code: rgb(240, 240, 240);
     --background-nav-alt: rgb(58, 62, 63);
-    --background-nav-file-tag: rgb(203, 77, 73);
-    --background-nav-selected: rgb(203, 77, 73);
+    --background-nav-file-tag: #67001A;
+    --background-nav-selected: #67001A;
     --background-nav: rgb(41, 44, 46);
-    --background-primary: #fff;
-    --background-secondary-alt: #fff;
-    --background-secondary: #f5f6f8;
+    --background-primary: #FDF5E5;
+    --background-secondary-alt: #FDF5E5;
+    --background-secondary: #FDF5E5;
     --background-tag: #b5b5b5;
     --border-inline-code: rgb(215, 215, 215);
     --code-block-background: #f5f6f8;
     --code-block-border: #f5f6f8;
     --font-family-editor: var(--default-font);
     --font-family-preview: var(--default-font);
-    --interactive-accent: rgb(203, 77, 73);
-    --interactive-accent-muted: rgb(203, 77, 73, 0.5);
-    --interactive-accent-hover: rgb(203, 77, 73);
+    --interactive-accent: #67001A;
+    --interactive-accent-muted: #67001A;
+    --interactive-accent-hover: #67001A;
     --scrollbar-bg: rgba(0, 0, 0, 0);
     --scrollbar-thumb-bg: rgba(0, 0, 0, 0);
-    --text-accent: rgb(203, 77, 73);
-    --text-accent-hover: rgb(203, 77, 73);
+    --text-accent: #67001A;
+    --text-accent-hover: #67001A;
     --text-faint: rgb(150, 150, 150);
-    --text-header: rgb(203, 77, 73);
+    --text-header: #67001A;
     --text-highlight-bg: #b4ff0066;
     --text-inline-code: rgb(45, 45, 45);
     --text-nav-selected: rgb(255, 255, 255);
