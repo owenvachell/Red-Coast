@@ -1,0 +1,397 @@
+/*  ---------- 
+    MAIN
+ ----------  */
+
+/*---- FONTS ----*/
+
+:root {    
+    --default-font: charter, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    --editor-font-size: 14px;
+}
+
+/*
+.cm-s-obsidian, .markdown-preview-view {
+  text-align: justify;
+}
+*/
+
+.markdown-preview-view h1 {
+    font-size: 175%;
+    line-height: 150%;
+}
+
+.markdown-preview-view h2 {
+    font-size: 150%;
+    line-height: 140%;
+}
+
+.markdown-preview-view h3 {
+    font-size: 130%;
+    line-height: 130%;
+}
+
+.markdown-preview-view h4 {
+    font-size: 120%;
+    line-height: 120%;
+}
+
+.markdown-preview-view h5 {
+    font-size: 110%;
+    line-height: 110%;
+}
+
+.view-header-title {
+    font-size: 12px;
+    font-weight: 600;
+    overflow: auto;
+}
+
+.internal-query-header {
+    display: none!important;
+}
+
+/* ------- EMPTY Home Screen -----*/
+.empty-state {
+    display: none;
+}
+
+/* -------------------
+WYSIWYM style editor
+Credit: Piotr, Obsidian forum
+--------------------- */
+
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-header,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-strong,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-em,
+/*div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-code-block,*/
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-highlight,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-code,
+/*div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-string.cm-url,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-link,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hmd-barelink,*/
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-comment,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-tag {
+    display: none;
+}
+
+/* ----------------------------------
+auto fades status bar items 
+Credit: rsdimitrov, Obsidian forum 
+----------------------------------- */
+
+.status-bar:not(:hover) .status-bar-item {
+  opacity: 0.25;
+  transition: opacity .25s ease-in-out;
+}
+
+/* -----------------------------------
+Add quotation character before quote 
+Credit: Thery, Obsidian forum
+------------------------------------ */
+blockquote:before {
+  font: 14px/20px italic Times, serif;
+  content: "“";
+  font-size: 3em;
+  line-height: 0.1em;
+  vertical-align: -0.4em;
+}
+blockquote p { display: inline; }
+
+/* ----------------------------------
+bigger link popup preview  
+Credit: _ph, Obsidian forum
+----------------------------------- */
+.popover.hover-popover {
+    transform: scale(0.8); /* makes the content smaller */
+    max-height: 800px;    /* was 300 */
+    min-height: 100px;
+    width: 500px;     /* was 400 */
+}
+
+/* -------------------------------------------
+outliner for the outline 
+Credit: Shamama, Obsidian forum
+-------------------------------------------- */
+.outline-heading-children{
+  border-left: 1px solid rgba(118,158,165,0.2);
+  border-radius:0 0px 0px 0;
+  transition:all 0.5s ease-in-out;
+}
+.outline-heading-children:hover{
+  border-left-color:rgba(118,158,165,0.4);
+}
+/* outliner for the file and folders */
+.nav-folder,.nav-file{
+  margin:0 !important;
+  border-left: 1px solid rgba(118,158,165,0.2);
+}
+
+
+/*---- PREVIEW MODE ----*/
+
+.markdown-embed .markdown-preview-view {
+    padding: 0;
+}
+
+.markdown-preview-view .markdown-embed, .markdown-preview-view .file-embed {
+    border-left: 1px solid var(--background-modifier-border);
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0 24px;
+    margin: 0;
+}
+
+div.markdown-preview-view {
+    font-family: var(--font-family-preview);
+}
+
+.markdown-preview-view blockquote {
+    border-radius: 0;
+    border: 0px solid var(--text-accent);
+    border-left-width: 5px;
+}
+
+/*---- NOTE TRANSCLUSION PREVIEW ----*/
+
+.markdown-embed-title, .file-embed-title {
+    font-size: 0;
+}
+
+.markdown-embed-title {
+    height: 0;
+}
+
+/*---- SIDE PANES ----*/
+
+.view-header, .workspace-ribbon.is-collapsed, .workspace-ribbon.mod-left.is-collapsed, .workspace-leaf.mod-active .view-header, .workspace-split.mod-root > .workspace-leaf:first-of-type:last-of-type .view-header, .status-bar {
+    background-color: var(--background-primary);
+    border: none;
+}
+
+.workspace-leaf-resize-handle:hover {
+    background-color: var(--interactive-accent-hover);
+}
+
+/*---- YAML IN PREVIEW MODE ----*/
+
+.frontmatter-container {
+    border: none;
+    font-size: 14px;
+    color: var(--text-muted);
+    padding: 0;
+    background-color: var(--background-primary);
+}
+
+/*---- NOTE TITLE BAR ----*/
+
+.nav-file-title.is-active {
+    background-color: var(--background-nav-selected);
+    color: var(--text-nav-selected);
+}
+
+/*---- TAGS ----*/
+
+a.tag {
+    font-size: 10px;
+    color: var(--text-accent);
+    text-decoration: none;
+}
+
+/*---------------------------
+LIST RELATIONSHIP LINES - PREVIEW ONLY
+Credit: Obsidian forum (this appears in a lot of places,
+it's difficult to identify the original author)
+---------------------------*/
+
+ul {
+    position: relative; 
+}
+
+ul ul::before {
+    content:'';
+    border-left: 1px solid var(--interactive-accent);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+ul ul::before {
+    left: -11px;
+}
+
+/* ---------- CODE BLOCK (EDIT MODE) ------------- */
+
+.cm-s-obsidian .HyperMD-codeblock {
+    color: var(--text-accent)!important;
+}
+
+.theme-light :not(pre) > code[class*="language-"], .theme-light pre[class*="language-"],
+.theme-dark :not(pre) > code[class*="language-"], .theme-dark pre[class*="language-"] {
+    background-color: var(--background-secondary);
+}
+
+/* ---------- GRAPH ------------- */
+
+.graph-controls {
+    position: absolute;
+    background-color: var(--background-primary);
+    border: none;
+    opacity: 0;
+}
+
+.graph-controls:hover {
+    opacity: 1;
+}
+
+/*  ----------  LIGHT THEME ----------  */
+
+.theme-light {
+    --background-inline-code: rgb(240, 240, 240);
+    --background-nav-alt: rgb(58, 62, 63);
+    --background-nav-file-tag: #67001A;
+    --background-nav-selected: #67001A;
+    --background-nav: rgb(41, 44, 46);
+    --background-primary: #FDF5E5;
+    --background-secondary-alt: #FDF5E5;
+    --background-secondary: #FDF5E5;
+    --background-tag: #b5b5b5;
+    --border-inline-code: rgb(215, 215, 215);
+    --code-block-background: #f5f6f8;
+    --code-block-border: #f5f6f8;
+    --font-family-editor: var(--default-font);
+    --font-family-preview: var(--default-font);
+    --interactive-accent: #67001A;
+    --interactive-accent-muted: #67001A;
+    --interactive-accent-hover: #67001A;
+    --scrollbar-bg: rgba(0, 0, 0, 0);
+    --scrollbar-thumb-bg: rgba(0, 0, 0, 0);
+    --text-accent: #67001A;
+    --text-accent-hover: #67001A;
+    --text-faint: rgb(150, 150, 150);
+    --text-header: #67001A;
+    --text-highlight-bg: #b4ff0066;
+    --text-inline-code: rgb(45, 45, 45);
+    --text-nav-selected: rgb(255, 255, 255);
+    --text-nav: rgb(190, 190, 190);
+    --text-normal: rgb(44, 44, 44);
+    --text-normal-opposite: rgb(216, 216, 216);
+}
+
+
+/*  ----------  DARK THEME ----------  */
+
+.theme-dark {
+    --background-inline-code: rgb(41, 44, 46);
+    --background-nav-alt: rgb(58, 62, 63);
+    --background-nav-file-tag: rgb(205,133,63);
+    --background-nav-selected: rgb(205,133,63);
+    --background-nav: rgb(41, 44, 46);
+    --background-primary: rgb(28, 30, 32);
+    --background-tag: rgb(111, 112, 116);
+    --border-inline-code: rgb(76, 76, 76);
+    --code-block-background: rgb(32, 32, 32);
+    --code-block-border: rgb(77, 77, 77);
+    --color-title: #ffffff;
+    --color-axis: #ffffff;
+    --color-axis-label: #ffffff;
+    --color-tick-label: #ffffff;
+    --color-line: #ffffff;
+    --color-legend: #ffffff;
+    --color-dot-fill: #69b3a2;
+    --color-dot-stroke: none;
+    --color-tooltip-bg: #ffffff;
+    --color-tooltip-border: #000000;
+    --color-tooltip-label: #000000;
+    --font-family-editor: var(--default-font);
+    --font-family-preview: var(--default-font);
+    --interactive-accent: rgb(205,133,63);
+    --interactive-accent-hover: rgb(205,133,63);
+    --scrollbar-bg: rgba(0, 0, 0, 0);
+    --scrollbar-thumb-bg: rgba(0, 0, 0, 0);
+    --text-accent: rgb(205,133,63);
+    --text-faint: rgb(150, 150, 150);
+    --text-header: rgb(198, 213, 224);
+    --text-highlight-bg: #b4ff0066;
+    --text-inline-code: rgb(230, 230, 230);
+    --text-nav-selected: rgb(255, 255, 255);
+    --text-nav: rgb(190, 190, 190);
+    --text-normal: rgb(216, 216, 216);
+    --text-normal-oppsite: rgb(44, 44, 44);
+}
+
+/*  ----------------------------------  
+		PLUGINS
+-------------------------------------*/
+
+/*  ----------  CHECKLIST ----------  */
+
+.checklist-plugin-main {
+    --todoList-contentPadding: 0 5px 0 5px!important;
+    --todoList-tagSub: var(--text-accent);
+    --todoList-togglePadding: 0 5px 0 5px!important;
+    --todoList-checkboxSize: 15px!important;
+    --todoList-headerFontWeight: 400!important;
+    --todoList-headerFontSize: 16px!important;
+    --todoList-headerGap: 0!important;
+    --todoList-iconSize: 18px!important;
+    --todoList-countFontSize: 12px!important;
+}
+
+.tag-base.svelte-yzsyxo {
+    font-size: 0;
+}
+
+.day.svelte-q3wqg9 {
+    background-color: var(--color-background-day);
+    color: var(--color-text-day);
+    cursor: pointer;
+    font-size: 0.7em!important;
+    height: 100%;
+    padding: 0.2em!important;
+    position: relative;
+    text-align: center;
+    transition: background-color 0.1s ease-in, color 0.1s ease-in;
+    vertical-align: baseline;
+}
+
+/*  ----------  CALENDAR ----------  */
+
+#calendar-container .reset-button {
+    font-size: 12px!important;
+}
+
+#calendar-container .year {
+    color: var(--text-faint);
+    font-weight: 400;
+}
+
+#calendar-container .month {
+    color: var(--text-accent);
+    font-weight: 600;
+}
+
+#calendar-container .month, #calendar-container .title, #calendar-container .reset-button {
+    font-size: 18px;
+    text-transform: none;
+}
+
+/*  ----------  SLIDING PANES (ANDY'S MODE) ----------  */
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container:before, .view-header-title-container:after {
+    background: var(--background-primary)!important;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+    border: none!important;
+}
+
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container:before {
+    height: 15px;
+    top: 0;
+    bottom: unset;
+    background: var(--background-primary)!important;
+}
