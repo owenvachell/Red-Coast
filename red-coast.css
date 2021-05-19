@@ -400,3 +400,8 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
     bottom: unset;
     background: var(--background-primary)!important;
 }
+
+/* ------------- GTD ---------------------------*/
+div.todo-item-view-toolbar-item.active svg {
+    fill: var(--text-accent)!important;
+}
