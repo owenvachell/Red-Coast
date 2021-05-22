@@ -66,18 +66,15 @@ Credit: Piotr, Obsidian forum
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-header,
 /*div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-strong,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-em,
-/*div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-code-block,*/
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-code-block,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-highlight,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-code,
-/*div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-string.cm-url,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-string.cm-url,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-formatting-link,
-<<<<<<< HEAD:style.css
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hmd-barelink,
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-comment,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hmd-barelink,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-comment,*/
-=======
-div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hmd-barelink,*/
-div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-comment,
->>>>>>> cfafefc89dcf1d99a29724d0496857e6428c5614:red-coast.css
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-tag {
     display: none;
 }
