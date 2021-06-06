@@ -1,4 +1,4 @@
-# My Obsidian Themes
+# Red Coast
 Custom [Obsidian](https://obsidian.md) CSS with WYSIWYM editor, inspired by Red Graphite and California Coast themes.
 
 ## Licence
