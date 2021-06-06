@@ -1,5 +1,5 @@
 # My Obsidian Themes
-Putting together some custom CSS themes for use in [Obsidian](https://obsidian.md). Details below.
+Custom [Obsidian](https://obsidian.md) CSS with WYSIWYM editor, inspired by Red Graphite and California Coast themes.
 
 ## Licence
 Re-use/edit as you wish. Attribution appreciated but not necessary. 
@@ -14,9 +14,6 @@ Appreciative donations are welcome but not mandatory.
 3. Download any of the css files from this repo to the `snippets` directory just created.
 4. Go to the `Appearance` settings in Obsidian.
 5. Scroll to the bottom and enable/reload snippets.
-
-## red-coast
-Custom Obsidian CSS with WYSIWYM editor, inspired by Red Graphite and California Coast themes
 
 ### Attribution
 I don't consider myself a CSS developer. I know enough to get the things done that I need/want, albeit not necesseraily in the most code efficient way. So this theme contains a few snippets from those more talented in the CSS arena than I am in the Obsidian community. To acknowledge them, I wanted to put this attribution section high up this page, rather than buried at the bottom. 
@@ -65,6 +62,3 @@ Unless otherwise stated, all references originate from the Obsidian forum.
 ##### Light
 
 <img width="1440" alt="light plugins" src="https://user-images.githubusercontent.com/57481833/117004777-5e50c180-acde-11eb-8618-f991b6fbb258.png">
-
-## academix
-Screenshots to follow
