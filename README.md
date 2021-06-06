@@ -2,7 +2,11 @@
 Putting together some custom CSS themes for use in [Obsidian](https://obsidian.md). Details below.
 
 ## Licence
-Re-use/edit as you wish. Attribution appreciated but not necessary.
+Re-use/edit as you wish. Attribution appreciated but not necessary. 
+
+Appreciative donations are welcome but not mandatory.
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/O4O03Z55T)
 
 ## Installation
 1. Turn off any themes already in use.
