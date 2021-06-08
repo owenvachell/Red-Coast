@@ -128,7 +128,6 @@ Credit: Shamama, Obsidian forum
 /* outliner for the file and folders */
 .nav-folder,.nav-file{
   margin:0 !important;
-  border-left: 1px solid rgba(118,158,165,0.2);
 }
 
 
