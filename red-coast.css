@@ -6,6 +6,8 @@
 
 :root {
     --default-font: Avenir, "Avenir Next", "Avenir Next Cyr", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
+    --light-accent: rgb(203, 77, 73);
+    --dark-accent: rgb(205,133,63);
 }
 
 body {
@@ -56,6 +58,82 @@ body {
 /* ------- EMPTY Home Screen -----*/
 .empty-state {
     display: none;
+}
+
+/*  ----------  LIGHT THEME ----------  */
+
+.theme-light {
+    --background-inline-code: rgb(240, 240, 240);
+    --background-nav-alt: rgb(58, 62, 63);
+    --background-nav-file-tag: var(--light-accent);
+    --background-nav-selected: var(--light-accent);
+    --background-nav: rgb(41, 44, 46);
+    --background-primary: #fff;
+    --background-secondary-alt: #fff;
+    --background-secondary: #f5f6f8;
+    --background-tag: #b5b5b5;
+    --border-inline-code: rgb(215, 215, 215);
+    --code-block-background: #f5f6f8;
+    --code-block-border: #f5f6f8;
+    --font-family-editor: var(--default-font);
+    --font-family-preview: var(--default-font);
+    --interactive-accent: var(--light-accent);
+    --interactive-accent-muted: rgb(203, 77, 73, 0.5);
+    --interactive-accent-hover: var(--light-accent);
+    --scrollbar-bg: none;
+    --scrollbar-thumb-bg: none;
+    --text-accent: var(--light-accent);
+    --text-accent-hover: var(--light-accent);
+    --text-faint: rgb(150, 150, 150);
+    --text-header: var(--light-accent);
+    --text-highlight-bg: #b4ff0066;
+    --text-inline-code: rgb(45, 45, 45);
+    --text-nav-selected: #fff;
+    --text-nav: rgb(190, 190, 190);
+    --text-normal: rgb(44, 44, 44);
+    --text-normal-opposite: rgb(216, 216, 216);
+}
+
+
+/*  ----------  DARK THEME ----------  */
+
+.theme-dark {
+    --background-inline-code: rgb(41, 44, 46);
+    --background-nav-alt: rgb(58, 62, 63);
+    --background-nav-file-tag: var(--dark-accent);
+    --background-nav-selected: var(--dark-accent);
+    --background-nav: rgb(41, 44, 46);
+    --background-primary: rgb(28, 30, 32);
+    --background-tag: rgb(111, 112, 116);
+    --border-inline-code: rgb(76, 76, 76);
+    --code-block-background: rgb(32, 32, 32);
+    --code-block-border: rgb(77, 77, 77);
+    --color-title: #fff;
+    --color-axis: #fff;
+    --color-axis-label: #fff;
+    --color-tick-label: #fff;
+    --color-line: #fff;
+    --color-legend: #fff;
+    --color-dot-fill: #69b3a2;
+    --color-dot-stroke: none;
+    --color-tooltip-bg: #ffffff;
+    --color-tooltip-border: #000000;
+    --color-tooltip-label: #000000;
+    --font-family-editor: var(--default-font);
+    --font-family-preview: var(--default-font);
+    --interactive-accent: var(--dark-accent);
+    --interactive-accent-hover: var(--dark-accent);
+    --scrollbar-bg: none;
+    --scrollbar-thumb-bg: none;
+    --text-accent: var(--dark-accent);
+    --text-faint: rgb(150, 150, 150);
+    --text-header: rgb(198, 213, 224);
+    --text-highlight-bg: #b4ff0066;
+    --text-inline-code: rgb(230, 230, 230);
+    --text-nav-selected: rgb(255, 255, 255);
+    --text-nav: rgb(190, 190, 190);
+    --text-normal: rgb(216, 216, 216);
+    --text-normal-oppsite: rgb(44, 44, 44);
 }
 
 /* -------------------
@@ -113,21 +191,68 @@ Credit: _ph, Obsidian forum
     width: 500px;     /* was 400 */
 }
 
-/* -------------------------------------------
-outliner for the outline 
-Credit: Shamama, Obsidian forum
--------------------------------------------- */
-.outline-heading-children{
-  border-left: 1px solid rgba(118,158,165,0.2);
-  border-radius:0 0px 0px 0;
-  transition:all 0.5s ease-in-out;
+/* ----------------------------------
+modified from ITS theme
+----------------------------------- */
+/*Nav Folder Lines*/
+.nav-folder, .nav-file {
+    margin: 0 -2px;
+    margin-right: 0px;
+    border-left: 1px solid var(--text-faint);
 }
-.outline-heading-children:hover{
-  border-left-color:rgba(118,158,165,0.4);
+/*Align Folder Line*/
+.nav-folder-children {
+    padding-left: 18px;
 }
-/* outliner for the file and folders */
-.nav-folder,.nav-file{
-  margin:0 !important;
+/*Nav Hover Line Colors*/
+.nav-folder:hover,
+.nav-file:hover {
+    border-color: var(--text-accent);
+}
+
+/*Tag Pane Lines*/
+.tag-container .tree-item-children {
+    margin-left: .7em;
+    border-left: 1px solid var(--text-faint);
+    border-bottom: 1px solid var(--note);  /*Removes Dot!!*/
+    transition: all 0.5s ease-in-out;
+    padding: 0;
+}
+
+.tag-container .tree-item-children:hover {
+    border-left: 1px solid var(--text-accent);
+}
+
+/*Outline Pane Lines*/
+.outline .tree-item-children {
+    margin-left: .7em;
+    border-left: 1px solid var(--text-faint);
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+}
+.outline .tree-item-children:hover {
+    border-color: var(--text-accent);
+}
+
+/*Editor Bullet Lines*/
+.markdown-preview-view .task-list-item-checkbox {
+    margin-right: 2%;
+}
+
+.cm-hmd-list-indent .cm-tab {
+    position: relative;
+}
+.cm-hmd-list-indent .cm-tab::before {
+    content:'';
+    border-left: 1px solid var(--text-faint);
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    bottom: -4px; 
+}
+
+.cm-s-obsidian .HyperMD-list-line {
+    padding-top: 0;
 }
 
 
@@ -153,6 +278,31 @@ div.markdown-preview-view {
     border-radius: 0;
     border: 0px solid var(--text-accent);
     border-left-width: 5px;
+}
+
+/* ---------- END --------- */
+
+/*---------------------------
+LIST RELATIONSHIP LINES - PREVIEW ONLY
+Credit: Obsidian forum (this appears in a lot of places,
+it's difficult to identify the original author)
+---------------------------*/
+
+ul {
+    position: relative; 
+}
+
+ul ul::before {
+    content:'';
+    border-left: 1px solid var(--interactive-accent);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+
+ul ul::before {
+    left: -11px;
 }
 
 /*---- NOTE TRANSCLUSION PREVIEW ----*/
@@ -201,29 +351,6 @@ a.tag {
     text-decoration: none;
 }
 
-/*---------------------------
-LIST RELATIONSHIP LINES - PREVIEW ONLY
-Credit: Obsidian forum (this appears in a lot of places,
-it's difficult to identify the original author)
----------------------------*/
-
-ul {
-    position: relative; 
-}
-
-ul ul::before {
-    content:'';
-    border-left: 1px solid var(--interactive-accent);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-}
-
-ul ul::before {
-    left: -11px;
-}
-
 /* ---------- CODE BLOCK (EDIT MODE) ------------- */
 
 .cm-s-obsidian .HyperMD-codeblock {
@@ -248,81 +375,7 @@ ul ul::before {
     opacity: 1;
 }
 
-/*  ----------  LIGHT THEME ----------  */
 
-.theme-light {
-    --background-inline-code: rgb(240, 240, 240);
-    --background-nav-alt: rgb(58, 62, 63);
-    --background-nav-file-tag: rgb(203, 77, 73);
-    --background-nav-selected: rgb(203, 77, 73);
-    --background-nav: rgb(41, 44, 46);
-    --background-primary: #fff;
-    --background-secondary-alt: #fff;
-    --background-secondary: #f5f6f8;
-    --background-tag: #b5b5b5;
-    --border-inline-code: rgb(215, 215, 215);
-    --code-block-background: #f5f6f8;
-    --code-block-border: #f5f6f8;
-    --font-family-editor: var(--default-font);
-    --font-family-preview: var(--default-font);
-    --interactive-accent: rgb(203, 77, 73);
-    --interactive-accent-muted: rgb(203, 77, 73, 0.5);
-    --interactive-accent-hover: rgb(203, 77, 73);
-    --scrollbar-bg: rgba(0, 0, 0, 0);
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0);
-    --text-accent: rgb(203, 77, 73);
-    --text-accent-hover: rgb(203, 77, 73);
-    --text-faint: rgb(150, 150, 150);
-    --text-header: rgb(203, 77, 73);
-    --text-highlight-bg: #b4ff0066;
-    --text-inline-code: rgb(45, 45, 45);
-    --text-nav-selected: rgb(255, 255, 255);
-    --text-nav: rgb(190, 190, 190);
-    --text-normal: rgb(44, 44, 44);
-    --text-normal-opposite: rgb(216, 216, 216);
-}
-
-
-/*  ----------  DARK THEME ----------  */
-
-.theme-dark {
-    --background-inline-code: rgb(41, 44, 46);
-    --background-nav-alt: rgb(58, 62, 63);
-    --background-nav-file-tag: rgb(205,133,63);
-    --background-nav-selected: rgb(205,133,63);
-    --background-nav: rgb(41, 44, 46);
-    --background-primary: rgb(28, 30, 32);
-    --background-tag: rgb(111, 112, 116);
-    --border-inline-code: rgb(76, 76, 76);
-    --code-block-background: rgb(32, 32, 32);
-    --code-block-border: rgb(77, 77, 77);
-    --color-title: #ffffff;
-    --color-axis: #ffffff;
-    --color-axis-label: #ffffff;
-    --color-tick-label: #ffffff;
-    --color-line: #ffffff;
-    --color-legend: #ffffff;
-    --color-dot-fill: #69b3a2;
-    --color-dot-stroke: none;
-    --color-tooltip-bg: #ffffff;
-    --color-tooltip-border: #000000;
-    --color-tooltip-label: #000000;
-    --font-family-editor: var(--default-font);
-    --font-family-preview: var(--default-font);
-    --interactive-accent: rgb(205,133,63);
-    --interactive-accent-hover: rgb(205,133,63);
-    --scrollbar-bg: rgba(0, 0, 0, 0);
-    --scrollbar-thumb-bg: rgba(0, 0, 0, 0);
-    --text-accent: rgb(205,133,63);
-    --text-faint: rgb(150, 150, 150);
-    --text-header: rgb(198, 213, 224);
-    --text-highlight-bg: #b4ff0066;
-    --text-inline-code: rgb(230, 230, 230);
-    --text-nav-selected: rgb(255, 255, 255);
-    --text-nav: rgb(190, 190, 190);
-    --text-normal: rgb(216, 216, 216);
-    --text-normal-oppsite: rgb(44, 44, 44);
-}
 
 /*  ----------------------------------  
 		PLUGINS
