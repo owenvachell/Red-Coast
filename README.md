@@ -28,8 +28,6 @@ Unless otherwise stated, all references originate from the Obsidian forum.
 - bigger link popup preview - **_ph**
 - relationship lines - **ITS theme: [SIRvb, GitHub](https://github.com/SlRvb/Obsidian--ITS-Theme)** 
 
-*Changed list relationship lines to only show in preview mode as they didn't work properly in edit mode. If anyone is able to fix this, please let me know. (See issues)*
-
 ### Screenshots
 
 #### Dark theme
