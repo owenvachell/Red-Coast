@@ -26,8 +26,7 @@ Unless otherwise stated, all references originate from the Obsidian forum.
 - auto fades status bar - **rsdimitrov**
 - Add quotation character before quote - **Thery**
 - bigger link popup preview - **_ph**
-- outliner for the outline - **Shamama**
-- list relationship lines - **Obsidian forum** (this appears in a lot of places, it's difficult to identify the original author). Modified to only work with preview mode. Recommend the outliner plugin and enable the 'Improve the style of your lists' setting for relationship lines in edit mode. 
+- relationship lines - **ITS theme: [SIRvb, GitHub](https://github.com/SlRvb/Obsidian--ITS-Theme)** 
 
 *Changed list relationship lines to only show in preview mode as they didn't work properly in edit mode. If anyone is able to fix this, please let me know. (See issues)*
 
