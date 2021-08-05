@@ -8,17 +8,15 @@
     --default-font: Avenir, "Avenir Next", "Avenir Next Cyr", 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif;
     --light-accent: rgb(203, 77, 73);
     --dark-accent: rgb(205,133,63);
+    --highlight-pink: #fe1aa4;
+    --highlight-yellow: #ffdf65;
+    --highlight-orange: #ff9933;
+    --highlight-blue: #04d9ff;
 }
 
 body {
     --editor-font-size: 14px;
 }
-
-/*
-.cm-s-obsidian, .markdown-preview-view {
-  text-align: justify;
-}
-*/
 
 .markdown-preview-view h1 {
     font-size: 175%;
@@ -60,6 +58,11 @@ body {
     display: none;
 }
 
+/* ------- REMOVE ROOT FOLDER TITLE --------*/
+.nav-folder-title[data-path="/"] {
+    display: none;
+}
+
 /*  ----------  LIGHT THEME ----------  */
 
 .theme-light {
@@ -78,7 +81,7 @@ body {
     --font-family-editor: var(--default-font);
     --font-family-preview: var(--default-font);
     --interactive-accent: var(--light-accent);
-    --interactive-accent-muted: rgb(203, 77, 73, 0.5);
+    --interactive-accent-muted: rgba(203, 77, 73, 0.5);
     --interactive-accent-hover: var(--light-accent);
     --scrollbar-bg: none;
     --scrollbar-thumb-bg: none;
@@ -156,6 +159,7 @@ div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-comment,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-tag {
     display: none;
 }
+
 
 /* ----------------------------------
 auto fades status bar items 
@@ -251,6 +255,34 @@ modified from ITS theme
     bottom: -4px; 
 }
 
+/*Outline Pane Lines*/
+.outline .tree-item-children {
+    margin-left: .7em;
+    border-left: 1px solid var(--text-faint);
+    transition: all 0.3s ease-in-out;
+    padding: 0;
+}
+.outline .tree-item-children:hover {
+    border-color: var(--text-accent);
+}
+
+/*Editor Bullet Lines*/
+.markdown-preview-view .task-list-item-checkbox {
+    margin-right: 2%;
+}
+
+.cm-hmd-list-indent .cm-tab {
+    position: relative;
+}
+.cm-hmd-list-indent .cm-tab::before {
+    content:'';
+    border-left: 1px solid var(--text-faint);
+    position: absolute;
+    left: 6px;
+    top: -5px;
+    bottom: -4px; 
+}
+
 .cm-s-obsidian .HyperMD-list-line {
     padding-top: 0;
 }
@@ -276,7 +308,7 @@ div.markdown-preview-view {
 
 .markdown-preview-view blockquote {
     border-radius: 0;
-    border: 0px solid var(--text-accent);
+    border: 0 solid var(--text-accent);
     border-left-width: 5px;
 }
 
@@ -329,11 +361,7 @@ ul ul::before {
 /*---- YAML IN PREVIEW MODE ----*/
 
 .frontmatter-container {
-    border: none;
-    font-size: 14px;
-    color: var(--text-muted);
-    padding: 0;
-    background-color: var(--background-primary);
+    display: none;
 }
 
 /*---- NOTE TITLE BAR ----*/
@@ -367,12 +395,50 @@ a.tag {
 .graph-controls {
     position: absolute;
     background-color: var(--background-primary);
-    border: none;
-    opacity: 0;
+    border: 1px solid var(--interactive-accent);
 }
 
-.graph-controls:hover {
-    opacity: 1;
+/* ----- FAKE ADMONITION ----- */
+/* ----- PINK HIGHLIGHT ----- */
+.sourcenote h6[data-heading="pink"] {
+  font-size: 0;
+  background-color: var(--background-secondary);
+  margin-bottom: 0;
+  border-top: 3px solid var(--highlight-pink);
+  padding: 0;
+}
+
+/* ----- YELLOW HIGHLIGHT ----- */
+.sourcenote h6[data-heading="yellow"] {
+  font-size: 0;
+  background-color: var(--background-secondary);
+  margin-bottom: 0;
+  border-top: 3px solid var(--highlight-yellow);
+  padding: 0;
+}
+
+/* ----- ORANGE HIGHLIGHT ----- */
+.sourcenote h6[data-heading="orange"] {
+  font-size: 0;
+  background-color: var(--background-secondary);
+  margin-bottom: 0;
+  border-top: 3px solid var(--highlight-orange);
+  padding: 0;
+}
+
+/* ----- BLUE HIGHLIGHT ----- */
+.sourcenote h6[data-heading="blue"] {
+  font-size: 0;
+  background-color: var(--background-secondary);
+  margin-bottom: 0;
+  border-top: 3px solid var(--highlight-blue);
+  padding: 0;
+}
+
+.sourcenote p {
+  padding-left: 30px;
+  background-color: var(--background-secondary);
+  margin: 0;
 }
 
 
@@ -448,9 +514,4 @@ body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf
     top: 0;
     bottom: unset;
     background: var(--background-primary)!important;
-}
-
-/* ------------- GTD ---------------------------*/
-div.todo-item-view-toolbar-item.active svg {
-    fill: var(--text-accent)!important;
 }
