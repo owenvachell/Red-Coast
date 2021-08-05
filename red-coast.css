@@ -18,6 +18,12 @@ body {
     --editor-font-size: 14px;
 }
 
+/*
+.cm-s-obsidian, .markdown-preview-view {
+  text-align: justify;
+}
+*/
+
 .markdown-preview-view h1 {
     font-size: 175%;
     line-height: 150%;
@@ -81,7 +87,7 @@ body {
     --font-family-editor: var(--default-font);
     --font-family-preview: var(--default-font);
     --interactive-accent: var(--light-accent);
-    --interactive-accent-muted: rgba(203, 77, 73, 0.5);
+    --interactive-accent-muted: rgb(203, 77, 73, 0.5);
     --interactive-accent-hover: var(--light-accent);
     --scrollbar-bg: none;
     --scrollbar-thumb-bg: none;
@@ -159,7 +165,6 @@ div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-comment,
 div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-tag {
     display: none;
 }
-
 
 /* ----------------------------------
 auto fades status bar items 
@@ -255,34 +260,6 @@ modified from ITS theme
     bottom: -4px; 
 }
 
-/*Outline Pane Lines*/
-.outline .tree-item-children {
-    margin-left: .7em;
-    border-left: 1px solid var(--text-faint);
-    transition: all 0.3s ease-in-out;
-    padding: 0;
-}
-.outline .tree-item-children:hover {
-    border-color: var(--text-accent);
-}
-
-/*Editor Bullet Lines*/
-.markdown-preview-view .task-list-item-checkbox {
-    margin-right: 2%;
-}
-
-.cm-hmd-list-indent .cm-tab {
-    position: relative;
-}
-.cm-hmd-list-indent .cm-tab::before {
-    content:'';
-    border-left: 1px solid var(--text-faint);
-    position: absolute;
-    left: 6px;
-    top: -5px;
-    bottom: -4px; 
-}
-
 .cm-s-obsidian .HyperMD-list-line {
     padding-top: 0;
 }
@@ -308,7 +285,7 @@ div.markdown-preview-view {
 
 .markdown-preview-view blockquote {
     border-radius: 0;
-    border: 0 solid var(--text-accent);
+    border: 0px solid var(--text-accent);
     border-left-width: 5px;
 }
 
@@ -398,7 +375,10 @@ a.tag {
     border: 1px solid var(--interactive-accent);
 }
 
-/* ----- FAKE ADMONITION ----- */
+/* ----- fake admonition ----- */
+:root {
+}
+
 /* ----- PINK HIGHLIGHT ----- */
 .sourcenote h6[data-heading="pink"] {
   font-size: 0;
@@ -439,6 +419,7 @@ a.tag {
   padding-left: 30px;
   background-color: var(--background-secondary);
   margin: 0;
+  padding: 10px;
 }
 
 
